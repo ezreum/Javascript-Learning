@@ -1,9 +1,15 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
         function mover() {
-            
-            document.getElementById("val").style.top=;
+            max = screen.availHeight*0.85;
+            min = 0;
+            var alto = Math.round(Math.random()*(max-min)+min);
+            document.getElementById("val").style.top=alto;
+            max=screen.availWidth *0.85;
+            var ancho = Math.round(Math.random()*(max-min)+min);
+            document.getElementById("val").style.left=ancho;
         }
     </script>
 </head>
