@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8"/>
+            <title>Donde pulsó el usuario</title>
+
+            <script>
+
+                function obtenerNombre(elemento) {    
+                   var e1 = elemento.id;
+                   document.getElementById("sol").value=e1;
+                }
+
+            </script>
+        </head>
+        <body>
+            <a id="enlace" onclick="obtenerNombre(this)">mr. Nibbles</a>
+            <hr/>
+            <table id="tabla" border=1>
+                <tr> <td id="celda1" onclick="obtenerNombre(this)">celda 1</td> <td id="celda2" onclick="obtenerNombre(this)">celda 2</td> </tr>
+                <tr> <td id="celda3" onclick="obtenerNombre(this)">celda 3</td> <td id="celda4" onclick="obtenerNombre(this)">celda 4</td> </tr>
+            </table>
+            <input id="sol" type="text" readonly>
+        </body>
+    </html>

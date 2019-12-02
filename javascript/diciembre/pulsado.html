@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8"/>
+            <title>Donde pulsó el usuario</title>
+
+            <script>
+
+                function obtenerNombre(event) {    
+                   var tabla = document.getElementById("tabla");
+                   var e1 = event.target.id;
+                   document.getElementById("sol").value=e1;
+                }
+
+            </script>
+        </head>
+        <body>
+            <table id="tabla" border=1>
+                <tr> <td id="celda1" onclick="obtenerNombre(event)">celda 1</td> <td id="celda2" onclick="obtenerNombre(event)">celda 2</td> </tr>
+                <tr> <td id="celda3" onclick="obtenerNombre(event)">celda 3</td> <td id="celda4" onclick="obtenerNombre(event)">celda 4</td> </tr>
+            </table>
+            <input id="sol" type="text" readonly>
+        </body>
+    </html>
