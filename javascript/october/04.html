@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prueba aleatorios</title>
+<script>
+    function aleatorios() {
+    var min = parseInt(document.getElementById("min").value);
+    var max = parseInt(document.getElementById("max").value);
+    var vueltas = parseInt(document.getElementById("vueltas").value);
+    var collecion = new Array(vueltas);
+    var i = 0;
+    var bo = false;
+    var check;
+    var aux;
+    if (max < min){
+        aux = max;
+        max = min;
+        min = aux; 
+    }
+    var imposible = (max - min)+1;
+    if (vueltas <= imposible){
+    do {
+        check = Math.round(Math.random()*(max-min)+min);
+        let index = 0;
+    while (index < collecion.length-1) {
+        bo = check == collecion[index] ? true : false;
+        if (bo == true){
+            check = Math.round(Math.random()*(max-min)+min);
+            index = 0;
+        }
+        else {index++;}
+    }
+    collecion[i] = check;
+    i++;
+    } while (i<vueltas);
+    document.getElementById("miDiv").innerHTML+="Tus numeros aleatorios son: "+collecion+"<br/>";
+    let r = 0;
+    while (r <= collecion.length) {
+        console.log(r);
+    if (collecion[r] > collecion[r+1]) {
+        aux = collecion[r];
+        collecion[r] = collecion[r+1];
+        collecion[r+1] = aux;
+        r=0;
+        }
+        else {r++;}
+    }
+    document.getElementById("miDiv").innerHTML+="Tus numeros aleatorios ordenados son: "+collecion+"<br/>";
+    }
+    else {
+        document.getElementById("miDiv").innerHTML+="Escribe un rango de numeros valido ya que no se puede repetir ningún número<br/>";
+    }
+}
+</script>
+</head>
+<body>
+    <label>Valor inicial</label>
+    <input id="min" type="text"/></br>
+    <label>Valor final</label>
+    <input id="max" type="text"/></br>
+    <label>número de vueltas</label>
+    <input id="vueltas" type="text"/>
+    <div id="miDiv">
+    </div>
+    <input type="submit" value="apretar" onclick="aleatorios();"/>
+</body>
+
+</html>

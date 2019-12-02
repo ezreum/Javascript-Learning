@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba de funcion</title>
+        <script>
+        
+        function validar(name) {
+            var bo = false;
+            name = name.trim();
+            var alphanumeric=['abcdefghijklmnñopqrstuvwxyzáéíóúü'];
+            alphanumeric = alphanumeric+alphanumeric.toUpperCase();
+            if ( (name.lenght==0) || (name=="") ) {
+                do {
+
+
+                } while ( (i < name.lenght-1)  );
+            }
+        }
+
+        function mostrarNombreUsuario () {
+        var nombre;
+        nombre = document.getElementById("miTexto").value;
+
+        if (validar(nombre)) {    
+            document.getElementById("miDiv").innerHTML=document.getElementById("miTexto").value;
+            document.getElementById("miTexto").value="";
+            alert("Hola usuario "+nombre);
+            }
+        }
+
+        </script>
+    </head>
+    <body>
+        <pre><strong>introduzca su nombre :</strong></pre>
+        <input type="text" name="miTexto" id="miTexto"/>
+        <br>
+        <input type="button" value="click" onclick="mostrarNombreUsuario();"/>
+        <div id="miDiv"></div>
+    </body>
+</html>

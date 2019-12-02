@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Location</title>
+
+        
+
+    </head>
+
+    <body>
+
+        <div id="myDiv"></div>
+
+    </body>
+    <script>
+        var anclaje = location.hash;
+        var equipo = location.host;
+        var nombre = location.hostname;
+        var ruta = location.pathname;
+        var puerto = location.port; 
+        var protocolo = location.protocol;
+        
+        
+        document.getElementById("myDiv").innerHTML="anclaje: "+anclaje+"<br/>";
+        document.getElementById("myDiv").innerHTML+="host: "+equipo+"<br/>";
+        document.getElementById("myDiv").innerHTML+="hostname: "+nombre+"<br/>";
+        document.getElementById("myDiv").innerHTML+="ruta: "+ruta+"<br/>";
+        document.getElementById("myDiv").innerHTML+="puerto :"+puerto+"<br/>";
+        document.getElementById("myDiv").innerHTML+="protocolo: "+protocolo+"<br/>";
+    </script>
+</html>

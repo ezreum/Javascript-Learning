@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Location</title>
+
+        
+
+    </head>
+
+    <body>
+
+        <div id="myDiv"></div>
+
+    </body>
+    <script>
+        var anclaje = navigator.appCodeName;
+        var equipo = navigator.appName;
+        var nombre = navigator.appVersion;
+        var ruta = navigator.language;
+        var puerto = navigator.platform; 
+        var protocolo = navigator.cookieEnabled;
+        var info1 = navigator.userAgent;
+        var info2 = navigator.javaEnabled
+        
+        
+        document.getElementById("myDiv").innerHTML="appCodename: "+anclaje+"<br/>";
+        document.getElementById("myDiv").innerHTML+="appName: "+equipo+"<br/>";
+        document.getElementById("myDiv").innerHTML+="Version: "+nombre+"<br/>";
+        document.getElementById("myDiv").innerHTML+="Lenguage: "+ruta+"<br/>";
+        document.getElementById("myDiv").innerHTML+="Plataforma :"+puerto+"<br/>";
+        document.getElementById("myDiv").innerHTML+="cookies: "+protocolo+"<br/>";
+        document.getElementById("myDiv").innerHTML+="infoAgente: "+protocolo+"<br/>";
+        document.getElementById("myDiv").innerHTML+="Java: "+protocolo+"<br/>";
+    </script>
+</html>

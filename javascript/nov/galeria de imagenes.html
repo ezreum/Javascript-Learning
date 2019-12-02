@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Galeria JS</title>
+        
+        <script>
+            var cont=0;
+            var imagenes=['img/paisaje1.jpeg','img/paisaje2.jpg','img/paisaje3.jpg','img/paisaje4.jpg','img/paisaje5.png','img/paisaje6.jpg'];
+
+            function inicio() {
+                cont = 0;
+                document.getElementById("foto").src=imagenes[cont];
+                document.getElementById("foto").alt=imagenes[cont].substr(4);  
+            }
+
+            function siguiente() {
+                if (cont==(imagenes.length-1)){
+                cont =0;
+                document.getElementById("foto").src=imagenes[cont];   
+                document.getElementById("foto").alt=imagenes[cont].substr(4);             
+                }
+                else { 
+                    cont =cont+1;
+                    document.getElementById("foto").src=imagenes[cont];   
+                    document.getElementById("foto").alt=imagenes[cont].substr(4);             
+                }
+            }
+
+            function anterior() {
+                if (cont==0){
+                cont=(imagenes.length-1);
+                document.getElementById("foto").src=imagenes[cont];   
+                document.getElementById("foto").alt=imagenes[cont].substr(4);             
+                
+                }
+                else {
+                    cont=cont -1;
+                    document.getElementById("foto").src=imagenes[cont];   
+                    document.getElementById("foto").alt=imagenes[cont].substr(4);             
+                }
+            }
+
+            function ultimo() {
+                cont=imagenes.length-1;
+                document.getElementById("foto").src=imagenes[cont];
+            }
+
+            function addImg() {
+                ruta = document.getElementById("nueva").value;
+                 if(ruta.substr(0,4)!='http'){
+                var ruta="img/";
+                ruta += document.getElementById("nueva").value;   
+                }
+                imagenes.push(ruta); 
+            }
+
+        </script>
+
+    </head>
+
+    <body >
+
+        <center id="myDiv" >
+        <img id="foto" src="img/paisaje1.jpeg" alt="img/paisaje1.jpeg" width=800px height=400px/>
+        </center>
+        <br/>
+        <center>
+        <button onclick="inicio()">inicio</button>
+        <button onclick="anterior()">anterior</button>
+        <button onclick="siguiente()">siguiente</button>
+        <button onclick="ultimo()">último</button>
+    </center>
+    <label>introduce la ruta de la imagen</label>
+    <input id="nueva" type="text"/>
+    <button onclick="addImg()">añadir</button>
+    </body>
+</html>

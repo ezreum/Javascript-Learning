@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba con tablas</title>
+        <script>
+        function hacerTabla(){
+        var x = document.getElementById("caja").value;
+        for (let i = 0; i <= x; i++){   
+            for (let y = 1; y <= i ; y++) {
+                if (y%10 == 7) {
+                    document.getElementById("myDiv").innerHTML += "PUM ";
+                }
+                else  y < i ? document.getElementById("myDiv").innerHTML += y+"," : document.getElementById("myDiv").innerHTML += y;
+            }
+            document.getElementById("myDiv").innerHTML += "<br>";
+        }
+        }
+        </script>
+    </head>
+    <body>
+        <label for="caja">Numero de vueltas</label>
+        <input type="number" min="1" max="100" value="1" id="caja"/>
+        <br>
+        <input type="button" value="Hacer Tabla" onclick="hacerTabla();"/>
+        <div id="myDiv"></div>
+    </body>
+</html>

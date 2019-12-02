@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Nombres y apellidos</title>
+            <script>
+                function mostrarNombre() {
+                    var nombre = document.getElementById("nombre").value;
+                    var primerApe = document.getElementById("pApellido").value;
+                    var segundoApe = document.getElementById("sApellido").value;
+                    nombre = nombre.trim();
+                    primerApe = primerApe.trim();
+                    segundoApe = segundoApe.trim();
+                    var res1 = nombre+" "+primerApe+" "+segundoApe;
+                    var res2 = nombre+primerApe+segundoApe;
+                    document.getElementById("miDiv").innerHTML=res1;
+                    document.getElementById("miDiv2").innerHTML=res2;
+                }
+            </script>
+        </head>
+        <body>
+            <label>Nombre</label>
+            <input id="nombre" type="text"/>
+            <br/>
+            <label>Tu primer apellido</label>
+            <input id="pApellido" type="text"/>
+            <br/>
+            <label>Tu segundo apellido</label>
+            <input id="sApellido" type="text"/>
+            <br/>
+            <button id="mostrar" onclick="mostrarNombre();">Mostrar</button>
+            <br/>
+            <div id="miDiv"></div>
+            <div id="miDiv2"></div>
+        </body>
+    </html>

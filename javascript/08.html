@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba de edades</title>
+        <script>
+        function medirEdades () {
+        var persona1, persona2;
+        persona1 = document.getElementById("edad").value;
+        persona2 = document.getElementById("edad1").value;
+        // document.getElementById("miDiv").innerHTML="la edad de Ana es: "+document.getElementById("edad").value;
+        // document.getElementById("miDiv").innerHTML="la edad de Paco es: "+document.getElementById("edad1").value;
+        var informacion = persona1 + persona2;
+        var comprobacion;
+        if (persona1>persona2) {
+            comprobacion = "<br> <strong>Paco es mayor que Ana con " + persona1+" años</strong>";
+        } 
+        else if (persona2>persona1) {
+            comprobacion = "<br> <strong>Ana es mayor que Paco con " + persona2+" años</strong>";
+        }
+        else {
+            comprobacion = "<br> <strong>Las dos personas tienen la misma edad</strong>";
+        }
+        document.getElementById("miDiv").innerHTML="la edad de Paco es: "+persona1+"<br> La edad de Ana es: "+persona2+comprobacion;
+        document.getElementById("edad").value="";
+        document.getElementById("edad1").value="";
+        }
+        </script>
+    </head>
+    <body>
+        <label><strong>introduzca la edad de Paco :</strong></label>
+        <input type="text" name="edad" id="edad"/>
+        <br>
+        <label><strong>introduzca la edad de Ana :</strong></label>
+        <input type="text" name="edad1" id="edad1"/>
+        <br>
+        <input type="button" value="click" onclick="medirEdades();"/>
+        <div id="miDiv"></div>
+    </body>
+</html>

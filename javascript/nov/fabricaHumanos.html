@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+    <html>
+        <head>
+                <script src="advancedHuman.js"></script>
+                <script>
+                    var humans=[];
+                    var name;
+                    var surname;
+                    var address;
+                    var dob;
+                    var genre;
+                    var postalCode;
+                    
+                function printAll(people) {
+                        /* for(var humanete of humans){
+                            humanete.showHumanBasis("miDiv");
+                        } */
+                        human.showHumans("miDiv",people);
+                }
+                function add() {
+                    name=document.getElementById("name").value;
+                    surname=document.getElementById("surname").value;
+                    address=document.getElementById("address").value;
+                    dob =document.getElementById("dob").value;
+                    genre = document.getElementById("genre").value;
+                    postalCode = document.getElementById("postalCode").value;
+                    
+                    var boo=false;
+                    
+                    if (validar(boo))  {
+                    humans[humans.length] = new human(name,surname,address,dob,genre,postalCode);
+                    }
+
+                }
+
+                function validar() {
+                    
+                    var check = false;
+
+                    if (validarNombre() && validarApellido() && validarDireccion() && validarEdad()){
+                        document.write("lo soporta");
+                        check=true;
+                    }
+                    
+                    return check;
+
+                }
+
+                function validarEdad() {
+                    dob = dob.trim();
+                    var dias = dob.slice(0,lastIndexOf('-'));
+                    var mes = dob.slice();
+                    var anios = ;
+                }
+
+
+
+                function validarApellido() {
+                    
+                    var check=false;
+                    surname = surname.trim();
+                    if ((surname.length>3) && (surname.length<=35)) {
+                        if (surname.match(/^[A-Za-zÀ-ÿ]+$/g)) {
+                            check=true;
+                        }
+                    }
+                    return check;
+                }
+
+                function validarNombre() {
+                    
+                    var check=false;
+                    name = name.trim();
+                    if ((name.length>3) && (name.length<=20)) {
+                        if (name.match(/^[A-Za-zÀ-ÿ]+$/g)) {
+                            check=true;
+                        }
+                    }
+                    return check;
+                }
+
+                function validarDireccion() {
+                    
+                    var check=false;
+                    address = address.trim();
+                    if ((address.length>3) && (address.length<=35)) {
+                        if (name.match(/^[0-9A-Za-zÀ-ÿ]+$/g)) {
+                            check=true;
+                        }
+                    }
+                    return check;
+                }
+
+                    </script>
+        </head>
+        <body>
+                <label>nombre</label>
+                <input id="name" type="text"/>
+                <br/>
+                <label>apellidos</label>
+                <input id="surname" type="text"/>
+                <br/>
+                <label>direccion</label>
+                <input id="address" type="text"/>
+                <br/>
+                <label>año de nacimiento</label>
+                <input id="dob" type="text" placeholder="dd-mm-yyyy"/>
+                <br/>
+                <label>género</label>
+                <input id="genre" type="text"/>
+                <br/>
+                <label>Código Postal</label>
+                <input id="postalCode" type="text"/>
+                <div id="miDiv"></div>
+            <button onclick="add()">add human</button>
+            <button onclick="printAll(humans)">printAll</button>
+        </body>
+        
+        
+    </html>

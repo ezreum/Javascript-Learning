@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+    <html>
+        <head>
+                <script src="human.js"></script>
+                <script>
+                    var humans=[];
+                    
+                function imprimir() {
+                        for(var humanete of humans){
+                            humanete.showHumanBasis("miDiv");
+                        }
+                }
+                function add() {
+                    var weight=document.getElementById("weight").value;
+                    var age=document.getElementById("age").value;
+                    humans[humans.length] = new human(age,weight);
+                }
+                    </script>
+        </head>
+        <body>
+            weight
+                <input id="weight" type="text"/>
+            age
+                <input id="age" type="text"/>
+                <div id="miDiv"></div>
+            <button onclick="add()">add human</button>
+            <button onclick="imprimir()">print</button>
+        </body>
+        
+        
+    </html>

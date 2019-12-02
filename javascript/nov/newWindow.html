@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+    <html>
+    <head>
+
+        <script>
+            var miVentana
+            function ventana(){
+                
+                var name = document.getElementById("nombre").value;
+                var dimensions = parseInt(document.getElementById("dimensiones").value); 
+                var izq = (screen.width/2)-(dimensions);
+                var sup = (screen.height/2)-(dimensions);
+                var centrar = "width="+dimensiones+",height="+dimensiones+",top="+sup+",left="+izq;
+
+                var miVentana = window.open("","",centrar);
+
+                miVentana.document.open();
+
+                miVentana.document.write(name);
+
+                var botones = '<button onclick="window.moveBy(250,250)">moverRelativo</button>';
+                botones += '<button onclick="window.moveTo(250,250)">moverAbsoluto</button>';
+                botones += '<button onclick="window.resizeBy(250,250)">dimensionarRelativo</button>';
+                botones += '<button onclick="window.resizeTo(250,250)">dimensionarAbsoluto</button>';
+                miVentana.document.write(botones);
+
+                miVentana.document.close();
+            }
+
+            function relativo() {
+                document.write("hola");
+                window.moveBy(250,250);
+                miVentana.focus();
+
+            }
+
+
+        </script>
+
+    </head>
+
+    <body>
+        nombre a escribir
+        <input id="nombre" type="text" />
+        <br/>
+        dimensiones de la ventana
+        <input id="dimensiones" type="text" />
+        <br/>
+        <button onclick="ventana()">abrir nueva ventana</button>
+
+    </body>
+    </html>

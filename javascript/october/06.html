@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Prueba con cadenas</title>
+        <script>
+        function validarNombre() {
+            var name = document.getElementById("nombre").value; 
+            name = name.trim();
+            var aux="";
+            var aux2="";
+                var corte = name.indexOf(" ");
+                let i=0;
+                while (corte!=-1) {
+                if (corte>0){
+                aux=name.substr(0,corte);
+                aux2=name.substr((corte+1),name.length);
+                name=aux+aux2;
+                corte = name.indexOf(" ");
+                }
+                else {i++;}
+                }
+                //document.getElementById("miDiv").innerHTML+=aux;
+                //document.getElementById("miDiv").innerHTML+=aux2;
+            //document.getElementById("miDiv").innerHTML+=name;            
+            if (name.length>=6) {
+               document.getElementById("contra").disabled=false;
+            }
+        }
+        function validarContra() {
+            contra = document.getElementById('contra').value;
+            if (contra.length>=6) {
+                document.getElementById("enviar").disabled=false;
+            }
+        }
+        </script>
+        <script>
+            function limpiar() {
+                document.getElementById("nombre").value=""
+                document.getElementById("contra").value=""
+                document.getElementById("miDiv").innerHTML=""
+            }
+        </script>
+    </head>
+    <body>
+        <label>Nombre del usuario</label>
+        <input id="nombre" type="text" name="nombre" onchange="validarNombre();"/>
+        <br/>
+        <label>contraseña</label>
+        <input id="contra" type="password" name="contraseña" onchange="validarContra();" disabled=true/>
+        <br/>
+        <div id="miDiv"></div>
+        <input id="enviar" type="button" value="validar" disabled=true/>
+        <!---onclick="validar();"--->
+        <input type="reset" value="limpiar" onclick="limpiar();"/>
+    </body>
+</html>

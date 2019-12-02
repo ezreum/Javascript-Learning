@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba con encabezados</title>
+        <script>
+        function hacerCabeceras(){
+        var x = document.getElementById("caja").value;
+        var resultado="";
+        document.getElementById("caja").value="";
+        do{
+            resultado = "<h"+x+">esto es una cabecera, colega<h"+x+"><br>";
+            document.getElementById("myDiv").innerHTML+=resultado;
+            x++;
+        }
+        while (x<7) {
+        }
+        }
+        </script>
+    </head>
+    <body>
+        <label for="caja">Escribe un número para mostrar cabeceras distintas</label>
+        <input type="number" min="1" max="6" value="1" id="caja"/>
+        <br>
+        <input type="button" value="Añadir imagen" onclick="hacerCabeceras();"/>
+        <div id="myDiv"></div>
+    </body>
+</html>

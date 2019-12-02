@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Galeria JS</title>
+        
+        <script>
+            var cont=0;
+            var imagenes=['img/paisaje1.jpeg','img/paisaje2.jpg','img/paisaje3.jpg','img/paisaje4.jpg','img/paisaje5.png','img/paisaje6.jpg'];
+            
+            var intervalo;
+            var tiempo;
+
+            function inicio() {
+                if (cont==(imagenes.length-1)){
+                cont =0;
+                document.getElementById("foto").src=imagenes[cont];   
+                document.getElementById("foto").alt=imagenes[cont].substr(4);             
+                }
+                else { 
+                    cont =cont+1;
+                    document.getElementById("foto").src=imagenes[cont];   
+                    document.getElementById("foto").alt=imagenes[cont].substr(4);             
+                }
+            }
+
+            function parar() {
+                if (cont==0){
+                cont=(imagenes.length-1);
+                document.getElementById("foto").src=imagenes[cont];   
+                document.getElementById("foto").alt=imagenes[cont].substr(4);             
+                
+                }
+                else {
+                    cont=cont -1;
+                    document.getElementById("foto").src=imagenes[cont];   
+                    document.getElementById("foto").alt=imagenes[cont].substr(4);             
+                }
+            }
+
+            function temporizador() {
+                document.getElementById("inicio").disabled=true;
+                tiempo = parseInt(document.getElementById("tiempo").value);
+                intervalo = setInterval("inicio();",tiempo*1000);
+            }
+
+            function parar() {
+                document.getElementById("inicio").disabled=false;
+                clearInterval(intervalo);
+            }
+
+            function modificar() {
+                var modTiempo=document.getElementById("modTiempo").value
+                parar();
+                intervalo = setInterval("inicio();",modTiempo*1000);
+            }
+
+            function addImg() {
+                ruta = document.getElementById("nueva").value;
+                 if(ruta.substr(0,4)!='http'){
+                var ruta="img/";
+                ruta += document.getElementById("nueva").value;   
+                }
+                imagenes.push(ruta); 
+            }
+
+
+        </script>
+
+    </head>
+
+    <body >
+
+        <center id="myDiv" >
+        <img id="foto" src="img/paisaje1.jpeg" alt="img/paisaje1.jpeg" width=800px height=400px/>
+        </center>
+        <br/>
+        <center>
+        <button id="inicio" onclick="temporizador()">inicio</button>
+        <button onclick="parar()">parar</button>
+        <button onclick="modificar()">modificar</button>
+        <br/>
+        <label>tiempo entre imagenes</label>
+        <input id="tiempo" type="text"/>
+        <label>modificar tiempo</label>
+        <input id="modTiempo" type="text"/>
+        <br/>
+        <label>introduce la ruta de la imagen</label>
+        <input id="nueva" type="text"/>
+        <button onclick="addImg()">añadir</button>
+        </center>
+        </body>
+</html>

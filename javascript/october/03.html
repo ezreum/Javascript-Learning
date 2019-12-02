@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tabla senos y cosenos</title>
+<script>
+    function tablaGrados() {
+    var grados;
+    var pi = Math.PI.toFixed(3);
+    var radianes;
+    var res;
+    res="<table border=1>";
+    res+="<tr><th>grados</th><th>seno</th><th>coseno</th></tr>";
+    for (let w = 0; w <= 360; w+=10) {
+    grados=w;
+    radianes =(grados*pi)/180;
+    res+="<tr><td>"+w+"</td><td>"+Math.sin(radianes).toFixed(2)+"</td><td>"+Math.cos(radianes).toFixed(2)+"</td></tr>";
+    }
+    res+="</table>"
+    document.getElementById("miDiv").innerHTML+=res;
+}    
+</script>
+</head>
+<body>
+    <div id="miDiv">
+    </div>
+    <input type="submit" value="apretar" onclick="tablaGrados();"/>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Juego de edades</title>
+       <script>
+       function calcularEdad(){
+           var res;
+           var y;
+           var x;
+           var anio;
+           var fechaActual= new Date();
+           var fechaDada;
+           var comp1= document.getElementById("diaMes").value;
+           var comp2= document.getElementById("mes").value;
+           if (
+               ((comp1>=1)&&(comp1<=31))&&((comp2>=1)&&(comp2<=12))
+           ) {
+            y= document.getElementById("diaMes").value;
+            x= document.getElementById("mes").value;
+            anio=document.getElementById("anio").value;
+            fechaDada= new Date(anio, x-1, y);
+            console.log(fechaDada);
+            console.log(fechaActual);
+            res = fechaActual.getFullYear()- fechaDada.getFullYear();
+            if (fechaActual.getMonth()<fechaDada.getMonth()) {
+                res-=1;
+            } else if (fechaActual.getMonth() == fechaDada.getMonth()) {
+                if (fechaActual.getDate() < fechaDada.getDate()) {
+                    res-=1;
+                }
+            }
+            document.getElementById("miDiv").innerHTML+=res+"</br>";
+           } else {
+               x= "dia y mes no "; y="valido"
+           }
+       }
+       </script>
+    </head>
+    <body>
+        <label>Introduzca: </label></br>
+        <label for="diaMes">día del mes</label>
+        <input id="diaMes" type="number" min="1" max="31" name="diaMes"/></br>
+        <label for="mes">mes</label>
+        <input id="mes" type="number" min="1" max="12" name="mes"/></br>
+        <label for="anio">año</label>        
+        <input id="anio" type="number" min="1" max="2070" name="año"/></br>
+        <input type="submit" value="calcular" onclick="calcularEdad();"/>
+        <div id="miDiv">
+        </div>
+    </body>
+</html>

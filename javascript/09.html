@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio par o impar</title>
+        <script>
+            function numeroPar(){
+            var numero = document.getElementById("numerito").value;
+            var resultado;
+            if (numero%2 == 0){
+                resultado = "El número "+numero+" es par";
+            }
+            else {
+                resultado = "El número "+numero+" es impar";
+            }
+            document.getElementById("miDiv").innerHTML = resultado;
+            document.getElementById("numerito").value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <label><strong>Introduzca un numero</strong></label>
+        <input type="text" id="numerito"/>
+        <input type="button" value="contador" onclick="numeroPar();">
+        <div id="miDiv"></div>
+    </body>
+</html>

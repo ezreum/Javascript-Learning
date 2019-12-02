@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Primer ejercicio</title>
+        <script>
+            var A = true;
+            var B = true;
+            var y;
+            var o;
+            document.write("<center><table border=1><th>A</th><th>B</th><th>&&</th><th>||</th>");
+            y= A && B;
+            o= A || B;
+            document.write("<tr><td>"+A+"</td><td>"+B+"</td><td>"+y+"</td><td>"+o+"</td></tr>");
+            B= false;
+            y= A && B;
+            o= A || B;
+            document.write("<tr><td>"+A+"</td><td>"+B+"</td><td>"+y+"</td><td>"+o+"</td></tr>");
+            A=false;
+            B=true;
+            y= A && B;
+            o= A || B;
+            document.write("<tr><td>"+A+"</td><td>"+B+"</td><td>"+y+"</td><td>"+o+"</td></tr>");
+            B=false;
+            y= A && B;
+            o= A || B;
+            document.write("<tr><td>"+A+"</td><td>"+B+"</td><td>"+y+"</td><td>"+o+"</td></tr></table></center>");
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

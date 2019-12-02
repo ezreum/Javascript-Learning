@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio con fechas</title>
+        <script>
+        var parartime;
+        function reloj() {
+            var dateString = new Date().toLocaleTimeString();
+            document.getElementById("time").innerHTML=dateString;
+        }
+        function empezar() {
+            parartime = setInterval(reloj, 1000);
+            document.getElementById("empezar").disabled=true;
+            document.getElementById("parar").disabled=false;        
+        }
+        function parar() {
+            clearInterval(parartime);
+            document.getElementById("empezar").disabled=false;
+            document.getElementById("parar").disabled=true;        
+        }
+        </script>
+    </head>
+    <body>
+        <div id="time"></div>
+        <input id="empezar" type="submit" value="empezar" onclick="empezar();"/>
+        <input id="parar" type="submit" value="parar" onclick="parar();" disabled=true/>
+    </body>
+</html>

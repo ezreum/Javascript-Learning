@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba con encabezados</title>
+        <script>
+        function hacerCabeceras(){
+        var x = document.getElementById("caja").value;
+        var y = document.getElementById("caja1").value;
+        var aux;
+        y < x ? (aux=x) && (x=y) && (y=aux): 'default';
+        var resultado="";
+        document.getElementById("caja").value="";
+        do{
+            resultado = "<h"+x+">esto es una cabecera, colega<h"+x+"><br>";
+            document.getElementById("myDiv").innerHTML+=resultado;
+            x++;
+        }
+        while (x>=1 && x<=y) {
+        }
+        }
+        </script>
+    </head>
+    <body>
+        <label for="caja">Primera cabecera</label>
+        <input type="number" min="1" max="6" value="1" id="caja"/>
+        <br>
+        <label for="caja1">Última cabecera</label>
+        <input type="number" min="1" max="6" value="1" id="caja1"/>
+        <br>
+        <input type="button" value="Añadir imagen" onclick="hacerCabeceras();"/>
+        <div id="myDiv"></div>
+    </body>
+</html>

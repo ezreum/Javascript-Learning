@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edad deportista</title>
+        <script>
+            function numeroDivisible(){
+            var numero = parseInt(document.getElementById("numerito").value);
+            var resultado;
+            switch (numero) {
+                case 5:
+                case 6:
+                case 7:
+                resultado = "la persona es pre-benjamín"+" con "+numero+" años";break
+                case 8:
+                case 9:resultado = "la persona es benjamín"+" con "+numero+" años";break
+                case 10:
+                case 11:resultado = "la persona es alevin"+" con "+numero+" años";break
+                case 12:
+                case 13:resultado = "la persona es infantil"+" con "+numero+" años";break
+                case 14:  
+                case 15:resultado = "la persona es cadete"+" con "+numero+" años";break
+                case 16:
+                case 17: 
+                case 18: resultado = "la persona es juvenil"+" con "+numero+" años";break
+                default: resultado = "fuera de categoría";
+            }
+            document.getElementById("miDiv").innerHTML = resultado;
+            document.getElementById("numerito").value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <label><strong>Introduzca un numero</strong></label>
+        <input type="text" id="numerito"/>
+        <input type="button" value="contador" onclick="numeroDivisible();">
+        <div id="miDiv"></div>
+    </body>
+</html>

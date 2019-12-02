@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+    <html>
+
+        <head>
+
+            <title>Prueba con window</title>
+
+            <script>
+            function abrirVentana() {
+                var nombre = document.getElementById("nombre").value;
+                var medida = parseInt(document.getElementById("medida").value);
+
+                var altura = (screen.availHeight/2)-(medida/2);
+                var izq = (screen.availWidth/2)-(medida/2);
+                var medidas="width="+medida+",height="+medida+",top="+altura+",left="+izq;
+                var nuevaVentana = window.open("",nombre,medidas);
+                nuevaVentana.document.write("<h1>Esto es una prueba</h1>");
+                nuevaVentana.document.close();
+
+            }
+            </script>
+
+        </head>
+
+        <body>
+            <label>nombre de la ventana</label>
+            <input id="nombre" type="text"/>
+            <br/>
+            <label>medidas de la ventana</label>
+            <input id="medida" type="text"/>
+            <br/>
+            <input type="submit" value="hacerVentana" onclick="abrirVentana();"/>
+
+        </body>
+
+    </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio divisible o no</title>
+        <script>
+            function numeroDivisible(){
+            var numero = parseInt(document.getElementById("numerito").value);
+            var resultado;
+            var compendio = [2,3,4,5,6,7,8,9];
+            var booleanillo;
+            for (let index = 0; (index < 8) || (booleanillo==true); index++) {
+                numero % compendio[index] == 0 ? (resultado = "El número "+numero+" es divisible por "+compendio[index]) && (booleanillo=true) 
+                : (resultado = "El número "+numero+" no es divisible por "+compendio[index]) && (booleanillo=false);   
+            }
+            document.getElementById("miDiv").innerHTML = resultado;
+            document.getElementById("numerito").value = "";
+            }
+        </script>
+    </head>
+    <body>
+        <label><strong>Introduzca un numero</strong></label>
+        <input type="text" id="numerito"/>
+        <input type="button" value="contador" onclick="numeroDivisible();">
+        <div id="miDiv"></div>
+    </body>
+</html>

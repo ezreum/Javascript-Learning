@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Segunda prueba con fechas</title>
+    </head>
+    <body>
+        <div id="miDiv"></div>
+        <script>
+            var diasSemana = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
+            var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+            var fecha = new Date();
+            var texto = "Fechado en San Fernando de Henares en "+diasSemana[fecha.getDay()]+" a "+fecha.getDate()+" de "+meses[fecha.getMonth()]+" de "+fecha.getFullYear()+" a las "+fecha.getHours()+" horas, "+fecha.getMinutes()+" minutos y "+fecha.getSeconds()+" segundos";
+            document.getElementById("miDiv").innerHTML+=texto;
+        </script>
+    </body>
+</html>

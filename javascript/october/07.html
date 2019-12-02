@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Letras movedizas</title>
+        <script>
+
+            var predefUsu = 3;
+            var pararTemp;
+            var texto;
+
+            function izquierda() {
+                aux = texto.slice(1);
+                aux2 = texto.charAt(0);
+                texto = aux+aux2;
+                document.getElementById("miDiv2").innerHTML=texto;
+            }
+
+            function izquierdaMov() {
+
+            texto = document.getElementById("texto").value;
+            texto = texto.trim();
+
+            document.getElementById("btnDer").disabled=true;
+            document.getElementById("btnIzq").disabled=true;
+            document.getElementById("btnPa").disabled=false;
+
+                predefUsu = 3;
+                if (document.getElementById("tiempo").value != '') {
+                predefUsu = document.getElementById("tiempo").value;
+            }
+
+                pararTemp = setInterval(izquierda,predefUsu*1000);
+            }
+
+            function derecha() {
+                aux = texto.slice(0,(texto.length-1));
+                aux2 = texto.charAt(texto.length-1);
+                texto = aux2+aux;
+                document.getElementById("miDiv2").innerHTML=texto;
+            }
+
+            function derechaMov() {
+
+            texto = document.getElementById("texto").value;
+            texto = texto.trim();
+
+            document.getElementById("btnDer").disabled=true;
+            document.getElementById("btnIzq").disabled=true;
+            document.getElementById("btnPa").disabled=false;
+                predefUsu = 3;
+                if (document.getElementById("tiempo").value != '') {
+                predefUsu = document.getElementById("tiempo").value;
+            }
+
+            pararTemp = setInterval(derecha,predefUsu*1000);
+
+            }
+            
+            function empezar() {
+            
+            texto = document.getElementById("texto").value;
+            texto = texto.trim();
+            document.getElementById("miDiv").innerHTML=texto
+
+            document.getElementById("btnDer").disabled=false;
+            document.getElementById("btnIzq").disabled=false;
+            document.getElementById("btnEm").disabled=true;
+            }
+
+            function parar() {
+                clearInterval(pararTemp);
+            document.getElementById("btnPa").disabled=true;
+            document.getElementById("btnEm").disabled=false;
+            }
+
+        </script>
+    </head>
+    <body>
+        <label>Escribe tu texto</label>
+        <input id="texto" type="text"/>
+        <br/>
+        <label>Escribe el tiempo en segundos</label>
+        <input id="tiempo" type="text"/>
+        <br/>
+        <button id="btnIzq" onclick="izquierdaMov();" disabled>izquierda</button>
+        <button id="btnDer" onclick="derechaMov();" disabled>derecha</button>
+        <button id="btnEm" onclick="empezar();">empezar</button>
+        <button id="btnPa" onclick="parar();" disabled>parar</button>
+        <div id="miDiv"></div>
+        <div id="miDiv2"></div>
+    </body>
+</html>

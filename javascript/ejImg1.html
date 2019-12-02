@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba con imágenes</title>
+        <script>
+        function mostrarImagen(){
+        var x = document.getElementById("caja").value;
+        var resultado="";
+        if (x == 1){
+        resultado ="<img src=\"img/foto1.jpg\" alt=\"foto1\" width=\"300\" height=\"300\"/>";
+        }
+        else if (x == 2){
+        resultado ="<img src=\"img/foto2.jpg\" alt=\"foto2\" width=\"300\" height=\"300\"/>";
+        }
+        else if (x == 3){
+        resultado ="<img src=\"img/foto3.jpg\" alt=\"foto3\" width=\"300\" height=\"300\"/>";
+        }
+        else if (x == 4){
+        resultado ="<img src=\"img/foto4.jpg\" alt=\"foto4\" width=\"300\" height=\"300\"/>";
+        }
+        else {
+            resultado="not a valid number";
+            }
+        document.getElementById("myDiv").innerHTML=resultado;
+        document.getElementById("caja").value="";
+        }
+        </script>
+    </head>
+    <body>
+        <label for="caja">Escribe un número para mostrar una imagen distinta</label>
+        <input type="number" min="1" max="4" value="1" id="caja"/>
+        <br>
+        <input type="button" value="Añadir imagen" onclick="mostrarImagen();"/>
+        <div id="myDiv"></div>
+    </body>
+</html>

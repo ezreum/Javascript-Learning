@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>palíndromo</title>
+            <script>
+                function comprobarString(algo) {
+                    var bool=false;
+                    var reg=/[a-z]/g;
+                    if (algo.match(reg)) {
+                        bool=true;
+                    }
+                    return bool;
+                }
+
+
+                function comprobarPalindromo() {
+                    var texto = document.getElementById("texto").value;
+                    texto = texto.trim();
+                    texto = texto.toLowerCase();
+                    if (comprobarString(texto)){
+                        document.getElementById("miDiv").innerHTML="es una cadena, comprobamos si es un palíndromo <br/>";
+
+                        
+                        /*
+
+                        function palindrome(str) {
+                        str = str.toLowerCase().replace(/[^a-z]+/g,"");
+                        return str === str.split("").reverse().join("")
+}
+
+
+
+                        */
+                    }
+                    else {
+                        document.getElementById("miDiv").innerHTML="Escribe una cadena, por favor";
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <label>introduce tu frase</label>
+            <input id="texto" type="text"/>
+            <br/>
+            <button id="mostrar" onclick="comprobarPalindromo();">Comprobar palíndromo</button>
+            <br/>
+            <div id="miDiv"></div>
+        </body>
+    </html>

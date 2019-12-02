@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Prueba de eventos</title>
+            <script>
+                var nombre;
+                var apellido;
+                var direccion;
+                function validar() {
+                    if ( validarNombre() && validarApe() && validarDireccion() ) {
+                        alert("validó correctamente");
+                    }
+                    else {
+                        alert("Hay un error de validación");
+                    }
+                }
+                function validarNombre() {
+                    nombre=document.getElementById("nom").value;
+                    check = nombre==''||nombre==null||nombre==undefined?false:true;
+                    if (check) {
+                        document.getElementById("ape").disabled=false;
+                        document.getElementById("cod").innerHTML="";
+                    } else {
+                        document.getElementById("cod").innerHTML="Error al validar el nombre";
+                        document.getElementById("ape").disabled=true;
+                    }
+                    return check;
+                }
+                function validarApe() {
+                    apellido=document.getElementById("ape").value;
+                    check = apellido==''||apellido==null||apellido==undefined?false:true;
+                    if (check) {
+                        validarNombre();
+                        document.getElementById("dir").disabled=false;
+                        document.getElementById("cod1").innerHTML="";
+                    } else {
+                        document.getElementById("cod1").innerHTML="Error al validar el apellido";
+                        document.getElementById("dir").disabled=true;
+                    }
+                    return check;
+                }    
+                function validarDireccion() {
+                    direccion=document.getElementById("dir").value;
+                    check = direccion==''||direccion==null||direccion==undefined?false:true;
+                    if (check) {
+                        document.getElementById("cod2").innerHTML="";
+                        validarNombre();
+                        validarApe();
+                        document.getElementById("val").disabled=false;
+                    } else {
+                        document.getElementById("cod2").innerHTML="Error al validar la dirección";
+                        document.getElementById("val").disabled=true;
+                    }
+                    return check;
+                }
+            </script>
+        </head>
+        <body>
+            <label>Nombre</label>
+            <input id="nom" type="text" onkeyup="validarNombre()">
+            <label id="cod"></label>
+            <br/>
+            <label>Apellido</label>
+            <input id="ape" type="text" disabled onkeyup="validarApe()">
+            <label id="cod1"></label>
+            <br/>
+            <label>Direccion</label>
+            <input id="dir" type="text" disabled onkeyup="validarDireccion()">
+            <label id="cod2"></label>
+            <br/>
+            <button id="val" onclick="validar()" disabled>validar</button>
+        </body>
+    </html>

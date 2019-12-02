@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prueba de edades</title>
+        <script>
+        function medirEdades () {
+        var persona1, persona2;
+        persona1 = document.getElementById("edad").value;
+        persona2 = document.getElementById("edad1").value;
+        var nombre1 = document.getElementById("nombre").value;
+        var nombre2 = document.getElementById("nombre1").value;
+        var comprobacion;
+        var resta;
+        if (persona1>persona2) {
+            resta = persona1 - persona2;
+            comprobacion = "<br> <strong>"+nombre1+" es mayor que "+nombre2+" por " + resta+" años</strong>";
+        } 
+        else if (persona2>persona1) {
+            resta = persona2 - persona1;
+            comprobacion = "<br> <strong>"+nombre2+" es mayor que "+nombre1+" por " + resta+" años</strong>";
+        }
+        else {
+            comprobacion = "<br> <strong>Las dos personas tienen la misma edad</strong>";
+        }
+        document.getElementById("miDiv").innerHTML="la edad de "+nombre1+" es: "+persona1;
+        document.getElementById("miDiv").innerHTML+="<br> La edad de "+nombre2+" es: "+persona2;
+        document.getElementById("miDiv").innerHTML+=comprobacion;
+        document.getElementById("nombre").value="";
+        document.getElementById("nombre1").value="";
+        document.getElementById("edad").value="";
+        document.getElementById("edad1").value="";
+        }
+        </script>
+        <script>
+        function changeName() {
+            var nom;
+            if (document.getElementById("nombre")){ 
+            nom = document.getElementById("nombre").value;
+            document.getElementById("nomEdad").innerHTML = "<strong>introduzca la edad de "+nom+"</strong>";
+            }
+            if (document.getElementById("nombre1")){
+            nom = document.getElementById("nombre1").value;
+            document.getElementById("nomEdad1").innerHTML = "<strong>introduzca la edad de "+nom+"</strong>";
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <label><strong>introduzca el nombre de la primera persona :</strong></label>
+        <input type="text" name="nombre" id="nombre" oninput="changeName();"/>
+        <br>
+        <label id="nomEdad"><strong>introduzca la edad de la primera persona :</strong></label>
+        <input type="text" name="edad" id="edad"/>
+        <br>
+        <label><strong>introduzca el nombre de la segunda persona :</strong></label>
+        <input type="text" name="nombre1" id="nombre1" oninput="changeName();"/>
+        <br>
+        <label id="nomEdad1"><strong>introduzca la edad de segunda persona :</strong></label>
+        <input type="text" name="edad1" id="edad1"/>
+        <br>
+        <input type="button" value="click" onclick="medirEdades();"/>
+        <div id="miDiv"></div>
+    </body>
+</html>
