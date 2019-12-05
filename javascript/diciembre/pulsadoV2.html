@@ -6,7 +6,8 @@
 
             <script>
 
-                function obtenerNombre(elemento) {    
+                function obtenerNombre(elemento) {   
+                    var el= elemento || window.event; 
                    var e1 = elemento.id;
                    document.getElementById("sol").value=e1;
                 }
