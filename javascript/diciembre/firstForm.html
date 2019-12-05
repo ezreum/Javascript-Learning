@@ -4,19 +4,20 @@
 
             <title>primer Formulario en js</title>
 
-
+            <script src="validarForm.js"></script>
 
         </head>
         <body>
-            <form action="resultadoForm.html">
-                <label for=""></label>
-                <input type="text">
+            <form name="miForm" action="resultadoForm.html">
+                
+                <label for="nombre">nombre</label>
+                <input name="nombre" type="text">
                 <br/>
-                <label for=""></label>
-                <input type="text">
+                <label for="edad">edad</label>
+                <input name="edad" type="text">
                 <br/>
-                <input type="button">
-                <input type="text">
+                <button type="button" onclick="validar()">validar</button>
+                <input type="reset" value="limpiar">
 
             </form>
         </body>
