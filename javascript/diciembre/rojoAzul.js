@@ -10,39 +10,39 @@ function validar(col){
     var x;
     if (bo) {
         if (col=='rojo') {
-            var i=0;
+           
             for (var elemento of document.miForm.elements) {
-                document.miForm.elements[i].type=="text"?document.miForm.elements[i].style.color ="red":
-                document.miForm.elements[i].style.color ="green";
-              i++;
+                elemento.type=="text"?elemento.style.color ="red":
+                elemento.style.color ="green";
+            
             }
 
         }
         if (col=='azul') {
-            var i=0;
+       
             for (var elemento of document.miForm.elements) {
-                document.miForm.elements[i].type=="text"?document.miForm.elements[i].style.color ="blue":
-                document.miForm.elements[i].style.color ="black";
-              i++;
+                elemento.type=="text"?elemento.style.color ="blue":
+                elemento.style.color ="black";
+         
             }
 
         }
 
         if (col=='habilitar') {
-            var i=0;
+            
             for (var elemento of document.miForm.elements) {
-                document.miForm.elements[i].type=="text"?
-                document.miForm.elements[i].disabled ="":'';
-              i++;
+                elemento.type=="text"?
+                elemento.disabled ="":'';
+              
             }
         }
 
         if (col=='deshabilitar') {
-            var i=0;
+           
             for (var elemento of document.miForm.elements) {
-                document.miForm.elements[i].type=="text"?
-                document.miForm.elements[i].disabled="true":'';
-              i++;
+                elemento.type=="text"?
+                elemento.disabled="true":'';
+         
             }
         }
 
