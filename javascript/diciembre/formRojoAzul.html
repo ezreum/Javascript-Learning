@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Formulario multifuncional</title>
+
+            <script src="rojoAzul.js"></script>
+
+        </head>
+        <body>
+            <form name="miForm" action="resultadoForm.html">
+                
+                <label for="nombre">nombre</label>
+                <input name="nombre" type="text">
+                <br/>
+                <label for="apellido">apellido</label>
+                <input name="apellido" type="text">
+                <br/>
+                <label for="direccion">direccion</label>
+                <input name="direccion" type="text">
+                <br/>
+                <label for="telefono">telefono</label>
+                <input name="telefono" type="text">
+                <br/>
+                <label for="edad">edad</label>
+                <input name="edad" type="text">
+                <br/>
+                <input type="button" onclick="validar('rojo')" value="Pintar de rojo"/>
+                <input type="button" onclick="validar('azul')" value="Pintar de azul"/>
+                <input type="button" onclick="validar('habilitar')" value="habilitar todos los textos"/>
+                <input type="button" onclick="validar('deshabilitar')" value="deshabilitar todos los textos"/>
+                <input type="reset" value="limpiar">
+
+            </form>
+            <div id="elDiv">
+
+
+            </div>
+        </body>
+    </html>

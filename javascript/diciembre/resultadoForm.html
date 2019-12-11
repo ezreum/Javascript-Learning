@@ -1,13 +1,21 @@
 <!DOCTYPE html>
     <html>
         <head>
-
+            <meta charset="utf-8">
             <title>primer Formulario en js response</title>
 
+            <script>
+            
+                var direccion=location.search;
+                var trozos = direccion.split('&');  
+                nombre=trozos[0].split("=");
+                edad=trozos[1].split("=");     
+                document.write("<h1>Hola "+nombre[1]+"</h1>");
+                document.write("<h1>Tu edad es de "+edad[1]+" años</h1>");
 
+            </script>
 
         </head>
         <body>
-            
         </body>
     </html>

@@ -8,7 +8,7 @@
 
         </head>
         <body>
-            <form name="miForm" action="resultadoForm.html">
+            <form name="miForm" action="resultadoForm.html" onsubmit="validar()">
                 
                 <label for="nombre">nombre</label>
                 <input name="nombre" type="text">
@@ -16,7 +16,7 @@
                 <label for="edad">edad</label>
                 <input name="edad" type="text">
                 <br/>
-                <button type="button" onclick="validar()">validar</button>
+                <input type="button" onclick="validar()" value="validar"/>
                 <input type="reset" value="limpiar">
 
             </form>
