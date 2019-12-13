@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>RegExp Formulario en js</title>
+
+            <script src="validarFormReg.js"></script>
+
+        </head>
+        <body>
+            <form name="miForm">
+                
+                <label for="nombre">nombre</label>
+                <input name="nombre" type="text">
+                <label id="res"></label>
+                <br/>
+                <label for="telefono">edad</label>
+                <input name="telefono" type="text">
+                <br/>
+                <button type="button" onclick="validar(this.form)">validar</button>
+                <input type="reset" value="limpiar">
+
+            </form>
+        </body>
+    </html>

@@ -28,27 +28,30 @@ function validar(col){
 
         }
 
-        if (col=='habilitar') {
-            
-            for (var elemento of document.miForm.elements) {
-                elemento.type=="text"?
-                elemento.disabled ="":'';
-              
-            }
-        }
-
-        if (col=='deshabilitar') {
-           
-            for (var elemento of document.miForm.elements) {
-                elemento.type=="text"?
-                elemento.disabled="true":'';
-         
-            }
-        }
+        
 
     } else {
-        document.forms[0].innerHTML+="<hr/><label>no se validó correctamente</label>"
+        col=='habilitar'||col=='deshabilitar'?'':document.forms[0].innerHTML+="<hr/><label>no se validó correctamente</label>"
     }
+
+    if (col=='habilitar') {
+            
+        for (var elemento of document.miForm.elements) {
+            elemento.type=="text"?
+            elemento.disabled ="":'';
+          
+        }
+    }
+
+    if (col=='deshabilitar') {
+       
+        for (var elemento of document.miForm.elements) {
+            elemento.type=="text"?
+            elemento.disabled="true":'';
+     
+        }
+    }
+
 }
 
 function validarNombre() {
