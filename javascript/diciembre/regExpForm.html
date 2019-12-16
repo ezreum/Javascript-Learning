@@ -14,12 +14,17 @@
                 <input name="nombre" type="text">
                 <label id="res"></label>
                 <br/>
-                <label for="telefono">edad</label>
+                <label for="telefono">telefono</label>
                 <input name="telefono" type="text">
+                <br/>
+                <label for="reloj">hora</label>
+                <input id="reloj" name="hora" type="text">
                 <br/>
                 <button type="button" onclick="validar(this.form)">validar</button>
                 <input type="reset" value="limpiar">
-
+                <hr/>
+                <label id="err"></label>
             </form>
+            <script src="reloj.js"></script>
         </body>
     </html>
