@@ -5,7 +5,7 @@ function hora() {
 }
 
 function empezar() {
-    setInterval("hora()",60000);
+    setInterval("hora()",30000);
 }
 hora();
 empezar();
