@@ -26,9 +26,13 @@
                 <label for="email">email</label>
                 <input id="email" name="email" type="text">
                 <br/>
+                <label for="fecha">fecha</label>
+                <input id="fecha" name="fecha" type="text">
+                <br/>
                 <button type="button" onclick="validar(this.form)">validar</button>
-                <button type="button" onclick="validar(this.form)">validarMatricula</button>
-                <button type="button" onclick="validar(this.form)">validarEmail</button>
+                <button type="button" onclick="validarMatricula(this.form)">validarMatricula</button>
+                <button type="button" onclick="validarEmail(this.form)">validarEmail</button>
+                <button type="button" onclick="validarFecha(this.form)">validarFecha</button>
                 <input type="reset" value="limpiar">
                 <hr/>
                 <label id="err"></label>
