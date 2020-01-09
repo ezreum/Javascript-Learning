@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Radio-Color</title>
+    <script>
+            function chColor(miForm) {
+                var color = miForm.color.value;
+                
+                document.getElementById("elDivo").style.backgroundColor=color;
+            }
+            
+    </script>
+</head>
+<body>
+    <div id="elDivo">
+        <form name="miForm">
+        <label for="rojo">rojo</label>
+        <input type="radio" name="color" id="rojo" value="red"  onchange="chColor(this.form)"   >
+        <label for="morado">morado</label>
+        <input type="radio" name="color" id="morado" value="purple" onchange="chColor(this.form)"   >
+        <label for="verde">verde</label>
+        <input type="radio" name="color" id="verde" value="green" onchange="chColor(this.form)"   >
+        <label for="azul">azul</label>
+        <input type="radio" name="color" id="azul" value="blue"  onchange="chColor(this.form)"   >
+        <label for="violeta">violeta</label>
+        <input type="radio" name="color" id="violeta" value="violet" onchange="chColor(this.form)"   >
+    </form>
+    </div>
+</body>
+</html>

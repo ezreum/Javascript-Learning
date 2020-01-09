@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>radio-check</title>
+    <script>
+    function allow(miForm) {
+        miForm.artCulture.disabled=false;
+        miForm.science.disabled=false;
+        miForm.music.disabled=false;
+    }
+    function deny(miForm) {
+        miForm.artCulture.disabled=true;
+        miForm.science.disabled=true;
+        miForm.music.disabled=true;
+        miForm.artCulture.checked='';
+        miForm.science.checked='';
+        miForm.music.checked='';
+    }
+    </script>
+</head>
+<body>
+    <form >
+    <h5>Would you like to suscribe to our services?</h6>
+    <label for="subscrip">yes, I would like to</label>
+    <input type="radio" name="subscrip" id="subscrip" onclick="allow(this.form)">
+
+    <label for="subscrip">No, thank you</label>
+    <input type="radio" name="subscrip" id="subscrip" onclick="deny(this.form)">
+
+    <br/>
+
+    <h5>Topics of interest</h6>
+    <label for="topics">Art and culture</label>
+    <input type="checkbox" name="artCulture" id="topics" disabled>
+
+    <label for="topics">science</label>
+    <input type="checkbox" name="science" id="topics" disabled>
+    
+    <label for="topics">music</label>
+    <input type="checkbox" name="music" id="topics" disabled>
+</form>
+</body>
+</html>

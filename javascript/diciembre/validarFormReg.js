@@ -42,7 +42,7 @@ function validarHora() {
     var check=false;
     var reloj = document.miForm.reloj.value;
     var reg=/^(\d{2}|\d{1}):(\d{2}|\d{1}):(\d{2}|\d{1})$/;
-    var reg2=/^([01][0-9]|[2][0-3])(:[0-5][0-9]){2}$/;
+    var reg2=/^([01][0-9]|[2][0-3]):([0-5][0-9]){2}$/;
     console.log(reg.test(reloj));
     if (reg.test(reloj)) { 
         check=true;
