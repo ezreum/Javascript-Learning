@@ -1,0 +1,14 @@
+.temporal, .permanente, .botones{
+    float: left;
+}
+.permanente{
+    min-height: 200px;
+}
+.temporal{
+    min-height: 200px;
+}
+.der{
+    clear: both;
+    display: block;
+    
+}

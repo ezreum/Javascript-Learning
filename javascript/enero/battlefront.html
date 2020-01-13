@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="battlefront.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>select prueba</title>
+    <script src="battlefront.js"></script>
+</head>
+<body>
+    <form name="miForm">
+        texto
+        <input type="text" name="introducir">
+
+        <hr>
+
+        <select class="temporal" name="temporal" multiple>
+            <option value="default" selected="selected">Seleccione una opcion</option>
+        </select>
+
+        <div class="botones">
+            <button name="temp" onclick="cortarLista()">></button>
+            <br/>
+            <button name="temp" onclick="cortarTodo()">>>|</button>
+            <br/>
+            <button name="perm" onclick="cortarLista()">&lt</button>
+            <br/>
+            <button name="perm" onclick="cortarTodo()">&lt&lt|</button>
+        </div>
+
+        <select name="permanente" multiple>
+            <option value="default" selected="selected">Seleccione una opcion</option>
+        </select>
+
+        <button class="der" onclick="">enviar</button>
+
+    </form>
+</body>
+</html>
