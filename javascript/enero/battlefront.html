@@ -11,29 +11,27 @@
 <body>
     <form name="miForm">
         texto
-        <input type="text" name="introducir">
-
+        <input type="text" name="introducir" onkeyup="check(this.form);">
+        <button type="button" name="iniciar" onclick="entrar(this.form)">iniciar palabra</button>
         <hr>
 
         <select class="temporal" name="temporal" multiple>
-            <option value="default" selected="selected">Seleccione una opcion</option>
         </select>
 
         <div class="botones">
-            <button name="temp" onclick="cortarLista()">></button>
+            <button type="button" name="temp" onclick="cortarLista(this.form, this)">></button>
             <br/>
-            <button name="temp" onclick="cortarTodo()">>>|</button>
+            <button type="button" name="temp" onclick="cortarTodo(this.form, this)">>>|</button>
             <br/>
-            <button name="perm" onclick="cortarLista()">&lt</button>
+            <button type="button" name="perm" onclick="cortarLista(this.form, this)">&lt</button>
             <br/>
-            <button name="perm" onclick="cortarTodo()">&lt&lt|</button>
+            <button type="button" name="perm" onclick="cortarTodo(this.form, this)">&lt&lt|</button>
         </div>
-
+        <div id="midiv"></div>
         <select name="permanente" multiple>
-            <option value="default" selected="selected">Seleccione una opcion</option>
         </select>
 
-        <button class="der" onclick="">enviar</button>
+        <!-- <button class="der" onclick="">enviar</button> -->
 
     </form>
 </body>
