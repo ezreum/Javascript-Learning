@@ -13,26 +13,38 @@
         texto
         <input type="text" name="introducir" onkeyup="check(this.form);">
         <button type="button" name="iniciar" onclick="entrar(this.form)">iniciar palabra</button>
-        <hr>
+    </hr>
 
+        <div>
         <select class="temporal" name="temporal" multiple>
         </select>
+        </div>
 
         <div class="botones">
-            <button type="button" name="temp" onclick="cortarLista(this.form, this)">></button>
+            <button type="button" name="temp" onclick="cortarLista(this.form, this)">&gt;</button>
             <br/>
-            <button type="button" name="temp" onclick="cortarTodo(this.form, this)">>>|</button>
+            <button type="button" name="temp" onclick="cortarTodo(this.form, this)">&gt;&gt;|</button>
             <br/>
-            <button type="button" name="perm" onclick="cortarLista(this.form, this)">&lt</button>
+            <button type="button" name="perm" onclick="cortarLista(this.form, this)">&lt;</button>
             <br/>
-            <button type="button" name="perm" onclick="cortarTodo(this.form, this)">&lt&lt|</button>
+            <button type="button" name="perm" onclick="cortarTodo(this.form, this)">&lt;&lt;|</button>
         </div>
         <div id="midiv"></div>
+        <div>
         <select name="permanente" multiple>
         </select>
+    </div>
+    <div class="bot">
+        </hr>
+        <button type="button" name="temp" onclick="copiarLista(this.form, this)">copiar a lista derecha</button>
+        <button type="button" name="perm" onclick="copiarLista(this.form, this)">copiar a lista izquierda</button>
+           
+        </br>
 
-        <!-- <button class="der" onclick="">enviar</button> -->
-
+        <button type="button" name="temp" onclick="borrarLista(this.form, this)">borrar lista izquierda</button>   
+        <button type="button" name="perm" onclick="borrarLista(this.form, this)">borrar lista derecha</button>
+       
+    </div>
     </form>
 </body>
 </html>
