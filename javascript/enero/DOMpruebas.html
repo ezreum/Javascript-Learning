@@ -8,37 +8,43 @@
     <title>DOM</title>
 </head>
 <body>
-    <h1 onclick="indicarCabecera(this)" ondblclick="normalizar()">Cabecera de nivel 1.1</h1>
-    <br/>
-    <h1 onclick="indicarCabecera(this)" ondblclick="normalizar()">Cabecera de nivel 1.2</h1>
-    <br/>
-    <h1 onclick="indicarCabecera(this)" ondblclick="normalizar()">Cabecera de nivel 1.3</h1>
-    <br/>
+    <h1 onclick="indicarCabecera(this)" ondblclick="normalizar(this)">Cabecera de nivel 1.1</h1>
+    
+    <h1 onclick="indicarCabecera(this)" ondblclick="normalizar(this)">Cabecera de nivel 1.2</h1>
+    
+    <h1 onclick="indicarCabecera(this)" ondblclick="normalizar(this)">Cabecera de nivel 1.3</h1>
+ 
 
-    <h2 onclick="indicarCabecera(this)" ondblclick="normalizar()">Cabecera de nivel 2.1</h2>
-    <br/>
-    <h2 onclick="indicarCabecera(this)" ondblclick="normalizar()">Cabecera de nivel 2.2</h2>
-    <br/>
-    <h2 onclick="indicarCabecera(this)" ondblclick="normalizar()">Cabecera de nivel 2.3</h2>
-    <br/>
+    <h2 onclick="indicarCabecera(this)" ondblclick="normalizar(this)">Cabecera de nivel 2.1</h2>
+   
+    <h2 onclick="indicarCabecera(this)" ondblclick="normalizar(this)">Cabecera de nivel 2.2</h2>
 
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <br/>
+    <h2 onclick="indicarCabecera(this)" ondblclick="normalizar(this)">Cabecera de nivel 2.3</h2>
+    
 
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+    <ol>
+        <li>buscadores</li>
+        <ol>
+        <li>google</li>
+        <li>yahoo</li>
+        <li>bing</li>
+        </ol>
+
+        <li>links</li>
+        <ol>
+        <li>PepeElRomano</li>
+        <li>Macbeth</li>
+        <li>Perene</li>
+        </ol>
+
+    </ol>
+
     <hr/>
 
-    <button></button>
-    <button></button>
-    <button></button>
+    <button onclick="addExt()">Añadir elementos lista</button>
+    <button onclick="addInt()">Añadir elementos a listas internas</button>
+    <button onclick="addH1()">Añadir Cabecera nivel uno</button>
+    <button onclick="addH2()">añadir cabecera nivel dos</button>
 
     <hr/>
     <div id="miDiv"></div>
