@@ -58,3 +58,7 @@ function addInt() {
     document.getElementsByTagName("ol")[1].innerHTML+="<li>Nuevo elemento</li>";
     document.getElementsByTagName("ol")[2].innerHTML+="<li>Nuevo elemento</li>";
 }
+
+function addH1() {
+    
+}
