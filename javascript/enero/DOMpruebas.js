@@ -60,5 +60,5 @@ function addInt() {
 }
 
 function addH1() {
-    var a;
+    var b;
 }
