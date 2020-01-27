@@ -60,5 +60,23 @@ function addInt() {
 }
 
 function addH1() {
-    var b;
+    var cabecera = document.createElement("h1");
+    cabecera.onclick=function () {
+        indicarCabecera(this);
+    }
+    cabecera.ondblclick="normalizar(this)";
+    var texto = document.createTextNode("Nuevo elemento");
+    cabecera.appendChild(texto);
+    document.getElementsByTagName("div")[0].appendChild(cabecera);
+}
+
+function addH2() {
+    var cabecera = document.createElement("h2");
+    cabecera.onclick=function () {
+        indicarCabecera(this);
+    }
+    cabecera.ondblclick="normalizar(this)";
+    var texto = document.createTextNode("Nuevo elemento");
+    cabecera.appendChild(texto);
+    document.getElementsByTagName("div")[1].appendChild(cabecera);
 }
