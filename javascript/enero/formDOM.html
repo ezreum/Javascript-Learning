@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Programable</title>
+    <script src="formDOM.js"></script>
+</head>
+<body>
+    <h1>Crea tu propio formulario</h1>
+    <label for="">nombre de la cabecera</label>
+    <input type="text" onchange="cabeceraText()">
+    <select name="nivelH" disabled onchange="cabeceraNivel()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <label for="">cantidad de cabeceras</label>
+    <input type="text" disabled onchange="hacerCabeceras()">
+    <br/>
+    <label id="caja" for="">cajas de texto</label>
+    <input type="text">
+    <br/>
+    <label for="">radios</label>
+    <input type="text">
+    <br/>
+    <label for="">checkbox</label>
+    <input type="text">
+    <br/>
+    <label for="">botones</label>
+    <input type="text">
+    <br/>
+    <label for="">desplegables</label>
+    <input type="text">
+    <br/>
+    <label for="">Opciones desplegables</label>
+    <input type="text">
+    <br/>
+    <div id="miDiv"></div>
+</body>
+</html>
