@@ -8,10 +8,10 @@
     <script src="formDOM.js"></script>
 </head>
 <body>
+    <div>
     <h1>Crea tu propio formulario</h1>
-    <label for="">nombre de la cabecera</label>
-    <input type="text" onchange="cabeceraText()">
-    <select name="nivelH" disabled onchange="cabeceraNivel()">
+    <label for="">nivel de la cabecera a crear</label>
+    <select name="nivelH" onchange="cabeceraNivel()">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -20,10 +20,14 @@
     </select>
     <label for="">cantidad de cabeceras</label>
     <input type="text" disabled onchange="hacerCabeceras()">
+    </div>
+    <input type="hidden" id="cabeceras">
     <br/>
-    <label id="caja" for="">cajas de texto</label>
+    <div id="caja">
+    <label for="">cajas de texto</label>
     <input type="text">
     <br/>
+    </div>
     <label for="">radios</label>
     <input type="text">
     <br/>
