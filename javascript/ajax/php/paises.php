@@ -1,0 +1,7 @@
+<?php
+$paises=[];
+
+
+echo "españa";
+
+?>
