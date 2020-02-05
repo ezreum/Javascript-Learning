@@ -133,6 +133,8 @@ function preChecks() {
             etiqueta.appendChild(text);
             var caja = document.createElement("input");
            caja.type="text";
+           var salto=document.createElement("br");
+            document.getElementsByTagName("body")[0].appendChild(salto);
            caja.onchange=function () {
             doCheck(this, etiqueta, cantidad);
         }
