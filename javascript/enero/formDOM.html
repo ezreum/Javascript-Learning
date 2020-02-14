@@ -32,8 +32,8 @@
     </div>
 
     <div>
-    <label for="">radios</label>
-    <input type="text">
+    <label for="">¿Cuantos radios?</label>
+    <input type="text" onchange="preRadio()">
     </div>
     <br/>
 
@@ -46,19 +46,19 @@
     
     <div>
     <label for="">botones</label>
-    <input type="text">
+    <select name="nivelH" onchange="botonNivel()">
+        <option value="button">button</option>
+        <option value="submit">submit</option>
+        <option value="reset">reset</option>
+    </select>
+    <label>¿Cuántos botones van a ser?</label>
+    <input type="text" name="" disabled onchange="hacerBotones()">
     </div>
     <br/>
     
     <div>
     <label for="">desplegables </label>
-    <input type="text">
-    </div>
-    <br/>
-    
-    <div>
-    <label for="">Opciones desplegables</label>
-    <input type="text">
+    <input type="text" >
     </div>
     <br/>
 
