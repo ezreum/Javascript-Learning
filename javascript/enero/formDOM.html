@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Form Programable</title>
     <script src="formDOM.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
 </head>
-<body>
+<body class="bg-success">
     
-    <div>
+    <div class="container">
     <h1>Crea tu propio formulario</h1>
     <label for="">nivel de la cabecera a crear</label>
     <select name="nivelH" onchange="cabeceraNivel()">
@@ -25,26 +26,26 @@
     <input type="hidden" id="cabeceras">
     <br/>
     
-    <div id="caja">
+    <div id="caja" class="container">
     <label for="">¿cuantas cajas de texto?</label>
     <input type="text" value="" onchange="doBoxes()">
     <br/>
     </div>
 
-    <div>
+    <div class="container">
     <label for="">¿Cuantos radios?</label>
     <input type="text" onchange="preRadio()">
     </div>
     <br/>
 
-    <div>
+    <div class="container">
     <label for="">¿cuantos checkboxes?</label>
     <input type="text" onchange="preChecks()">
 
     </div>
     <br/>
     
-    <div>
+    <div class="container">
     <label for="">botones</label>
     <select name="nivelH" onchange="botonNivel()">
         <option value="button">button</option>
@@ -56,12 +57,17 @@
     </div>
     <br/>
     
-    <div>
-    <label for="">desplegables </label>
-    <input type="text" >
+    <div class="container">
+    <label for="">¿Cuantas opciones quieres en tu desplegable?</label>
+    <input type="text" onchange="doOption()"/>
     </div>
     <br/>
 
     <div id="miDiv"></div>
+    <div class="container">
+    <form>
+
+    </form>
+    </div>
 </body>
 </html>

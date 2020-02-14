@@ -43,7 +43,7 @@ function cabecera(caja, etiqueta, cantidad) {
             var cabecera = document.createElement("h"+info+"");
             var text = document.createTextNode(nombre);
             cabecera.appendChild(text);
-            document.getElementsByTagName("body")[0].appendChild(cabecera);
+            document.getElementsByTagName("form")[0].appendChild(cabecera);
             etiqueta.parentNode.removeChild(etiqueta);
             caja.parentNode.removeChild(caja);
             i=0;
@@ -52,7 +52,7 @@ function cabecera(caja, etiqueta, cantidad) {
             var cabecera = document.createElement("h"+info+"");
             var text = document.createTextNode(nombre);
             cabecera.appendChild(text);
-            document.getElementsByTagName("body")[0].appendChild(cabecera);
+            document.getElementsByTagName("form")[0].appendChild(cabecera);
             i++;
             
         }
@@ -97,8 +97,8 @@ function boxes(caja, etiqueta, cantidad) {
             etiqu.appendChild(text);
             var box = document.createElement("input");
             box.type="text";
-            document.getElementsByTagName("body")[0].appendChild(etiqu);
-            document.getElementsByTagName("body")[0].appendChild(box);
+            document.getElementsByTagName("form")[0].appendChild(etiqu);
+            document.getElementsByTagName("form")[0].appendChild(box);
             etiqueta.parentNode.removeChild(etiqueta);
             caja.parentNode.removeChild(caja);
             x=0;
@@ -110,8 +110,8 @@ function boxes(caja, etiqueta, cantidad) {
             etiqu.appendChild(text);
             var box = document.createElement("input");
             box.type="text";
-            document.getElementsByTagName("body")[0].appendChild(etiqu);
-            document.getElementsByTagName("body")[0].appendChild(box);
+            document.getElementsByTagName("form")[0].appendChild(etiqu);
+            document.getElementsByTagName("form")[0].appendChild(box);
             x%2!=0?document.getElementsByTagName("body")[0].appendChild(salto):'';
             x++;
             
@@ -134,7 +134,7 @@ function preChecks() {
             var caja = document.createElement("input");
            caja.type="text";
            var salto=document.createElement("br");
-            document.getElementsByTagName("body")[0].appendChild(salto);
+            document.getElementsByTagName("form")[0].appendChild(salto);
            caja.onchange=function () {
             doCheck(this, etiqueta, cantidad);
         }
@@ -161,8 +161,8 @@ function doCheck(caja, etiqueta, cantidad) {
             box.type="checkbox";
             box.value=caja.value;
             box.name=caja.value
-            document.getElementsByTagName("body")[0].appendChild(etiqu);
-            document.getElementsByTagName("body")[0].appendChild(box);
+            document.getElementsByTagName("form")[0].appendChild(etiqu);
+            document.getElementsByTagName("form")[0].appendChild(box);
             etiqueta.parentNode.removeChild(etiqueta);
             caja.parentNode.removeChild(caja);
             z=0;
@@ -176,8 +176,8 @@ function doCheck(caja, etiqueta, cantidad) {
             box.type="checkbox";
             box.value=caja.value;
             box.name=caja.value
-            document.getElementsByTagName("body")[0].appendChild(etiqu);
-            document.getElementsByTagName("body")[0].appendChild(box);
+            document.getElementsByTagName("form")[0].appendChild(etiqu);
+            document.getElementsByTagName("form")[0].appendChild(box);
             z++;
         }
         else {
@@ -198,7 +198,7 @@ function preRadio() {
             var caja = document.createElement("input");
            caja.type="text";
            var salto=document.createElement("br");
-            document.getElementsByTagName("body")[0].appendChild(salto);
+            document.getElementsByTagName("form")[0].appendChild(salto);
            caja.onchange=function () {
             doRadios(this, etiqueta, cantidad);
         }
@@ -225,8 +225,8 @@ function doRadios(caja, etiqueta, cantidad) {
             box.type="radio";
             box.value=caja.value;
             box.name=nombre;
-            document.getElementsByTagName("body")[0].appendChild(etiqu);
-            document.getElementsByTagName("body")[0].appendChild(box);
+            document.getElementsByTagName("form")[0].appendChild(etiqu);
+            document.getElementsByTagName("form")[0].appendChild(box);
             etiqueta.parentNode.removeChild(etiqueta);
             caja.parentNode.removeChild(caja);
             y++;
@@ -241,8 +241,8 @@ function doRadios(caja, etiqueta, cantidad) {
             box.type="radio";
             box.value=caja.value;
             box.name=nombre;
-            document.getElementsByTagName("body")[0].appendChild(etiqu);
-            document.getElementsByTagName("body")[0].appendChild(box);
+            document.getElementsByTagName("form")[0].appendChild(etiqu);
+            document.getElementsByTagName("form")[0].appendChild(box);
             x++;
         }
         else {
@@ -274,6 +274,8 @@ function hacerBotones() {
             etiqueta.appendChild(text);
             var caja = document.createElement("input");
            caja.type=text;
+           var salto=document.createElement("br");
+            document.getElementsByTagName("form")[0].appendChild(salto);
            caja.onchange=function () {
             boton(this, etiqueta, cantidad);
         }
@@ -295,16 +297,16 @@ function boton(caja, etiqueta, cantidad) {
             var boton = document.createElement("input");
             boton.type=info;
             boton.value=nombre;
-            document.getElementsByTagName("body")[0].appendChild(boton);
+            document.getElementsByTagName("form")[0].appendChild(boton);
             etiqueta.parentNode.removeChild(etiqueta);
             caja.parentNode.removeChild(caja);
-            i=0;
+            e=0;
         }  
         else if(nombre!='undefined' && nombre !='' && e < cantidad){
             var boton = document.createElement("input");
             boton.type=info;
             boton.value=nombre;
-            document.getElementsByTagName("body")[0].appendChild(boton);
+            document.getElementsByTagName("form")[0].appendChild(boton);
             e++;
             
         }
@@ -312,7 +314,56 @@ function boton(caja, etiqueta, cantidad) {
             etiqueta.parentNode.removeChild(etiqueta);
             caja.parentNode.removeChild(caja);
         }
+}
 
+function doOption() {
+    var entrada = document.getElementsByTagName("div")[5];
+    var cantidad = entrada.firstElementChild.nextElementSibling;
+    if ( cantidad.value!='undefined' ) {
+        var selector = document.createElement("select");
+        var etiqueta = document.createElement("label");
+        var text= document.createTextNode("escribe el valor del option");
+        etiqueta.appendChild(text);
+        var caja = document.createElement("input");
+       caja.type="text";
+       var salto=document.createElement("br");
+        document.getElementsByTagName("form")[0].appendChild(salto);
+        document.getElementsByTagName("form")[0].appendChild(selector);
+       caja.onchange=function () {
+        opcionalizar(this, etiqueta, cantidad.value);
+    }
+       document.getElementsByTagName("body")[0].insertBefore(etiqueta,document.getElementsByTagName("div")[6]);
+       document.getElementsByTagName("body")[0].insertBefore(caja,document.getElementsByTagName("div")[6]);
     
+}
+else{
+    document.getElementById("miDiv").innerHTML="algún dato está mal, por favor revísalo";
+} 
+
+}
+var p=0;
+function opcionalizar(caja, etiqueta, cantidad) {
     
+    var nombre = caja.value;
+        if ( p == cantidad-1 ) {
+            var opt = document.createElement("option");
+            opt.value= nombre;
+            opt.innerHTML=nombre;
+            document.getElementsByTagName("form")[0].lastElementChild.appendChild(opt);
+            etiqueta.parentNode.removeChild(etiqueta);
+            caja.parentNode.removeChild(caja);
+            p=0;
+        }  
+        else if(nombre!='undefined' && nombre !='' && p < cantidad){
+            var opt = document.createElement("option");
+            opt.value= nombre;
+            opt.innerHTML=nombre;
+            document.getElementsByTagName("form")[0].lastElementChild.appendChild(opt);
+            p++;
+            
+        }
+        else {
+            etiqueta.parentNode.removeChild(etiqueta);
+            caja.parentNode.removeChild(caja);
+        }
 }
