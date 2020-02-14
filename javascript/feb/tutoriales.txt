@@ -1,0 +1,23 @@
+[
+{
+"display": "Tutorial de JavaScript",
+"url": "https://uniwebsidad.com/libros/javascript"
+},
+{
+"display": "Tutorial de HTML ",
+"url": "https://uniwebsidad.com/libros/xhtml"
+},
+{
+"display": "Tutorial de CSS ",
+"url": "https://uniwebsidad.com/libros/css"
+},
+{
+"display": "Tutorial de Bootstrap ",
+"url": "https://uniwebsidad.com/libros/bootstrap-3"
+},
+{
+"display": "Tutorial de Ajax",
+"url": "https://uniwebsidad.com/libros/ajax"
+}
+] 
+
