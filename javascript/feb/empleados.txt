@@ -1,0 +1,9 @@
+﻿{"empleados":[
+    {"ide":"526DVB", "fecha":"1995-02-12", "nombre":"Juan", "apellidos":"Perea García"},
+    {"ide":"125BVB", "fecha":"1994-03-11", "nombre":"Anagelica", "apellidos":"Sanchez Fernandez"},
+    {"ide":"386NMG", "fecha":"1996-12-22", "nombre":"Pedro", "apellidos":"Lopez Lupe"},
+	{"ide":"325FDC", "fecha":"1999-02-15", "nombre":"Andres", "apellidos":"Perez Gonzalez"},
+	{"ide":"145PLK", "fecha":"1998-10-29", "nombre":"Nerea", "apellidos":"Etxegi Lorca"},
+	{"ide":"599VSD", "fecha":"1997-09-15", "nombre":"Luis", "apellidos":"Juan De Dios"},
+	{"ide":"596MJB", "fecha":"1998-06-22", "nombre":"Alberto", "apellidos":"Hernandez Senior"}
+]}
