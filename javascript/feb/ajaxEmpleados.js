@@ -48,3 +48,14 @@ function consultar() {
     }
     
 }
+
+function checkear() {
+    var contenido = document.getElementsByTagName("input")[0].value.trim().toUpperCase();
+    var patron=/^[0-5][0-9][0-9][B-DF-HJ-NPR-TVX-Z]{3}$/;
+    console.log(patron.test(contenido));
+    if (patron.test(contenido)) {
+        document.getElementById("miDiv").innerHTML=contenido;
+    } else {
+        document.getElementById("miDiv").innerHTML="¡Algo fue mal en la validación!";
+    }
+}

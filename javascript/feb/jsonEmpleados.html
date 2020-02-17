@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="ajaxTxt.js"></script>
+    <script src="ajaxEmpleados.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <title>ejer1Json</title>
 </head>
-<body onload="lanzarAjax('tutoriales.txt')">
-    <div></div>
+<body>
+    <h1 class="offset-1 mt-3">Introduce un identificador de tres numeros y tres letras</h1>
+    <div class="container mt-5">
+        <label for="">identificador</label>
+        <input type="text" name="identifier" onchange="checkear()">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <label for="">Identificador</label>
+                <input type="text" readonly>
+            </div>
+            <div class="col-12">
+                <label for="">Nombre</label>
+                <input type="text">
+            </div>
+            <div class="col-12">
+                <label for="">Apellidos</label>
+                <input type="text">
+            </div>
+            <div class="col-12">
+                <label for="">Fecha nacimiento</label>
+                <input type="text">
+            </div>
+            <div class="col-12">
+                <label for="">edad</label>
+                <input type="text" readonly>
+            </div>
+        </div>
+    </div>
+    <div id="miDiv" class="container mt-3"></div>
 </body>
 </html>
