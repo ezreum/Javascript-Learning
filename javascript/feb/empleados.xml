@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<empleados>
+    <empleado ide="526DVB">
+        <fecha>1995-02-12</fecha><nombre>Juan</nombre><apellidos>Perea Garcia</apellidos>
+    </empleado>
+    <empleado ide="125BVB">
+        <fecha>1994-03-11</fecha><nombre>Anagelica</nombre><apellidos>Sanchez Fernandez</apellidos>
+    </empleado>
+    <empleado ide="386NMG">
+        <fecha>1996-12-22</fecha><nombre>Pedro</nombre><apellidos>Lopez Lupe</apellidos>
+    </empleado>
+	<empleado ide="325FDC">
+        <fecha>1999-02-15</fecha><nombre>Andres</nombre><apellidos>Perez Gonzalez</apellidos>
+    </empleado>
+	<empleado ide="145PLK">
+        <fecha>1998-10-29</fecha><nombre>Nerea</nombre><apellidos>Etxegi Lorca</apellidos>
+    </empleado>
+	<empleado ide="599VSD">
+        <fecha>1997-09-15</fecha><nombre>Luis</nombre><apellidos>Juan De Dios</apellidos>
+    </empleado>
+	<empleado ide="596MJB">
+        <fecha>1998-06-22</fecha><nombre>Alberto</nombre><apellidos>Hernandez Señor</apellidos>
+    </empleado>
+</empleados>

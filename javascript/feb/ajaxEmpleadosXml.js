@@ -27,16 +27,21 @@ function respuesta(archivo) {
 function consultar() {
     
     if (peticion.readyState==4 && peticion.status==200) {
-        var res= JSON.parse(peticion.responseText);
-
+        //var res= document.getElementsByTagName("empleados");
+        var res=peticion.responseXML;
+        var empleados=res.getElementsByTagName("empleados");
+        console.log(empleados);
+        //var empleado = empleados.getElementsByTagName("empleado");
+        
         var identificadorProveido= contenido;
-    //    document.getElementById("miDiv").innerHTML+=res.empleados[0].ide;
         var entrada = document.getElementsByTagName("input");
-        for (let i = 0; i < res.empleados.length; i++) {
-            
-            if (res.empleados[i].ide == identificadorProveido) {
+        for (let i = 0; i < empleados.length; i++) {
 
-                var fechada=fechaFormat(res.empleados[i].fecha);
+            console.log(empleados[i].getAttribute("ide"));
+
+            if (empleado[i].getAttribute("ide") == identificadorProveido) {
+
+                var fechada=fechaFormat(empleado[i].getElementsByTagName("fecha").firstChild.nodeValue);
                 //document.getElementById("miDiv").innerHTML=fechaFormat;
                 entrada[1].value=res.empleados[i].ide;
                 entrada[2].value=res.empleados[i].nombre;
@@ -60,7 +65,7 @@ function checkear() {
         document.getElementById("miDiv").innerHTML="¡Algo fue mal en la validación!";
     }
     if (check){
-        lanzarAjax("empleados.txt");
+        lanzarAjax("empleados.xml");
     }
 }
 
