@@ -36,17 +36,20 @@ function consultar() {
     if (peticion.readyState==4 && peticion.status==200) {
         //var res= document.getElementsByTagName("empleados");
         var res=peticion.responseXML;
-        document.getElementById("miDiv").innerHTML=res;
-        var empleados=res.getElementsByTagName("empleados");
-        console.log(empleados);
-        //var empleado = empleados.getElementsByTagName("empleado");
-        
-        var identificadorProveido= contenido;
-        var entrada = document.getElementsByTagName("input");
-        for (let i = 0; i < empleados.length; i++) {
+        var raiz=res.getElementsByTagName("prediccion");
+        var dias=res.getElementsByTagName("dia");
+      
+        var provincia=res.getElementsByTagName("provincia")[0].firstChild.nodeValue;
 
-            console.log(empleados[i].getAttribute("ide"));
+        var html = "<table class='table-active'>"
+        html+="<tr><th>Lugar</th><th>Mínima</th><th>Máxima</th></tr>"
+        for (let i = 0; i < dias.length; i++) {
+            var maxima = dias[i].getElementsByTagName("temperatura")[0].getElementsByTagName("maxima")[0].firstChild.data;
+            var minima = dias[i].getElementsByTagName("temperatura")[0].getElementsByTagName("minima")[0].firstChild.nodeValue;
+            html+="<tr><td>"+provincia+"</td><td>"+maxima+"</td><td>"+minima+"</td></tr>";
         }
+        html+="</table>"
+        document.getElementById("miDiv").innerHTML=html;
     }
     
 }
