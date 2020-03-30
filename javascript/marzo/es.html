@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="libs/jquery-3.4.1.min.js"></script> -->
+</head>
+<body>
+    <script>
+        function obtenerCasosES(){
+           var ajax = new XMLHttpRequest({mozSystem: true});
+           
+           ajax.open("GET","https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov-China/situacionActual.htm?t="+Math.random(),true);
+           ajax.responseType = "document";
+           ajax.send();
+           ajax.onreadystatechange = function(){
+             if(ajax.readyState==4 && ajax.status==200){
+                 var DocGob = ajax.response;
+                 var header = DocGob.getElementsByClassName("cifra")[0];
+                 console.log(DocGob);
+                 //var casos =  document.getElementsByTagName("h1")[0].append(DocGob);
+                 //console.log(DocGob);
+                 document.getElementsByTagName("div")[0].append(header);
+                
+             }
+           };
+
+        }
+    </script>
+    <p id="info"></p>
+    <input type="button" value="Obtener casos en españa" onclick="obtenerCasosES()">
+    <hr/>
+    <div>
+
+    </div>
+</body>
+</html>
