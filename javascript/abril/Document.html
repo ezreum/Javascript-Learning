@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://adstop.net/test/geolocalizacionjs.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        if (navigator.geolocation) {
+            console.log("¡Excelente, el API puede ser utilizado!");
+        } else {
+            console.log("¡Ups! El API no es soportado en este navegador");
+        }
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(mostrarUbicacion);
+        }
+
+        function mostrarUbicacion(ubicacion) {
+            const lng = ubicacion.coords.longitude;
+            const lat = ubicacion.coords.latitude;
+            console.log("longitud: "+lng+" latitud: "+lat);
+            alert("longitud: "+lng+" latitud: "+lat);
+            window.open("https://maps.google.com/?q="+lat+','+lng,"_blank");
+        }
+    </script>
+
+
+</body></html>
