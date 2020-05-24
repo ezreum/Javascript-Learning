@@ -1,11 +1,11 @@
 function verLocalizacion() {
-    if (navigator.geolocation) {
-        console.log("probamos geolocalización");
-        navigator.geolocation.getCurrentPosition(hacerCosas);
-
-    } else {
-        console.log("¡error!");
-    }
+    $(document).ready(function () {
+        $.get('http://www.geoplugin.net/json.gp?jsoncallback=?',
+            function (data) {
+            console.log(JSON.stringify(data, null, 2));
+        });
+    });
+    
 }
 
 function hacerCosas(info) {

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+    <link rel="stylesheet" href="leaflet/leaflet.css"/>
+    <link rel="stylesheet" href="propio.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <script src="libs/jquery-3.4.1.min.js"></script>
+    <script src="leaflet/leaflet.js"></script>
+    <!--<script src="leaflet-geoip-master/leaflet-geoip.js"></script>-->
+    <script src="geolocalizacion.js"></script>
+</head>
+<body>
+    <form action="pruebaGeolo.php">
+    <h1>Pincha aquí para ver tu geolocalización</h1>
+    <button type="button" onclick="verLocalizacion()">Obtener ubicación</button>
+    <div></div>
+    <input id="geo" type="text" name=""/>
+</form>
+<div id="map"></div>
+
+</body>
+</html>
