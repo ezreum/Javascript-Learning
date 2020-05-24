@@ -2,7 +2,6 @@ var peticion="";
 
 
 function lanzarAjax() {
-   
     if (window.XMLHttpRequest) {
         peticion = new XMLHttpRequest();
         respuesta();
@@ -16,12 +15,12 @@ function lanzarAjax() {
 }
 
 function respuesta() {
-    var codigo = document.getElementById("codigoPostal").value;
-    if ( codigo!=null && codigo != 'undefined' && codigo != '') {
+    var provincia= document.getElementById("provincia").value;
+    if ( provincia!=null && provincia != 'undefined' && provincia != '') {
         peticion.onreadystatechange=consultar;
-        peticion.open("POST", window.location.origin+'Provincia/adivinarProvincia');
-        peticion.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-        peticion.send("codigo="+codigo);
+        peticion.open("POST", window.location.origin+'/Hospital/sacarHospitales');
+        peticion.setRequestHeader("Content-type","application/x-www-form-urlencoded; charset:UTF-8");
+        peticion.send("provincia="+provincia);
     }
     
 }
@@ -30,7 +29,9 @@ function consultar() {
     
     if (peticion.readyState==4 && peticion.status==200) {
         var res= peticion.responseText;
-        console.log(res);
+        for (var hospital of res) {
+            console.log(hospital);
+        }
     }
     
 }
